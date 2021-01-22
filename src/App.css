@@ -1,38 +1,304 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+
+/* ----- BODY ----- */
+
+body {
+    background-color: #f2f5f5;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    color: #2e3333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.--loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.--userSelect--disable {
+    user-select: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* HEADER */
+
+.--Header {
+    background-color: #ffffff;
+    height: 70px;
+    width: 100%;
+    border-bottom: solid #e8ebeb 1px;
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+    box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.--logo {
+    width: 153px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ----- MAIN ----- */
+
+/* Content */
+.--Content {
+    background-color: #f2f5f5;
+    padding: 0 100px;
+}
+
+.--Content--wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Cover */
+.--Cover--wrapper {
+    padding: 30px 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+}
+
+.--Cover--description {
+    margin-right: 30px;
+}
+
+.--Cover--description h1 {
+    font-size: 32px;
+    line-height: 26px;
+    font-weight: 600;
+}
+
+.--Cover--description p {
+    color: #888c8c;
+    font-size: 19px;
+    line-height: 29px;
+}
+
+.--Cover--picture img {
+    width: 353px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* MenuItems */
+.--MenuItems--wrapper {
+    margin-top: 30px;
+}
+
+.--MenuItems--items > h2 {
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.--MenuItems--meals {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 875px;
+}
+
+.--MenuItems--card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 13px;
+    box-sizing: border-box;
+    width: 400px;
+    height: 160px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0px 22px 24px 0px rgba(46, 51, 51, 0.07);
+}
+
+.--MenuItems--card:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: 0.5s;
+}
+
+.--MenuItems--card h3 {
+    font-size: 17px;
+    margin-top: 0;
+    margin-right: 8px;
+}
+
+.--MenuItems--description {
+    font-size: 15px;
+    margin-right: 8px;
+    color: #888c8c;
+}
+
+.--MenuItems--price {
+    font-size: 15px;
+    color: #888c8c;
+}
+
+.--star {
+    color: #ff8001;
+    margin: 0 10px 0 20px;
+}
+
+.--MenuItems--rate {
+    font-size: 15px;
+    line-height: 10px;
+    color: #ff8001;
+    font-weight: 600;
+}
+
+.--MenuItems--picture {
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Cart */
+.--Cart--wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 353px;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 22px 24px 0px rgba(46, 51, 51, 0.07);
+}
+
+.--Cart--validate--btn {
+    width: 100%;
+    height: 48px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #02cdbd;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+.--Cart--validate--btn:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: 0.5s;
+}
+
+.--Cart--disabled--btn {
+    cursor: not-allowed;
+    background: #bac3c3;
+    color: #8b9a9b;
+    width: 100%;
+    height: 48px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+.--Cart--empty {
+    color: #868a8a;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.--Cart--card {
+    border-bottom: 1px #bcc2c2 solid;
+    width: 100%;
+    max-height: calc(100vh - 300px);
+    overflow: auto; /* scroll du panier */
+}
+
+.--Cart--elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.--Cart--counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.--minus {
+    margin-right: 5px;
+}
+
+.--plus {
+    margin-left: 5px;
+}
+
+.--minus,
+.--plus {
+    color: #02cdbd;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.--Cart--counter span {
+    font-size: 14px;
+}
+
+.--Cart--details {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-between;
+    margin-left: 12px;
+}
+
+.--Cart--details div:first-child {
+    font-size: 14px;
+    width: 190px;
+    margin-right: 40px;
+}
+
+.--Cart--details div:last-child {
+    text-align: right;
+    font-size: 14px;
+    width: 60px;
+}
+
+.--Cart--results {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px #bcc2c2 solid;
+    width: 100%;
+}
+
+.--Cart-results--subtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.--Cart--results--deliveryfees {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.--Cart--total {
+    width: 100%;
+}
+
+.--Cart--amount--total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.--Cart--amount--total div:first-child,
+.--Cart--amount--total div:last-child {
+    font-size: 18px;
 }
